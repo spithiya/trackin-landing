@@ -1,3 +1,5 @@
+import Nav from './components/Nav';
+
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
@@ -15,54 +17,7 @@ export default function Home() {
         />
       </video>
 
-      {/* Navigation */}
-      <nav className="relative z-10">
-        <div className="max-w-7xl mx-auto px-8 py-6 flex flex-row items-center justify-between">
-          <span
-            className="text-3xl tracking-tight text-foreground"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            BrightMind<sup className="text-xs">®</sup>
-          </span>
-
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-sm text-foreground">
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Features
-            </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Locations
-            </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Contact
-            </a>
-          </div>
-
-          <a
-            href="/auth/login"
-            className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
-          >
-            Enter Portal
-          </a>
-        </div>
-      </nav>
+      <Nav active="home" />
 
       {/* Hero */}
       <section className="relative z-10 flex flex-col items-center text-center px-6 py-[90px]">
