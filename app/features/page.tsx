@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Nav from '../components/Nav';
 
 /* ─── Mini-mockup visual panels ─── */
@@ -235,9 +235,14 @@ function ExportVisual() {
 
 /* ─── Feature data ─── */
 
-const features = [
+const features: {
+  Icon: () => React.ReactElement;
+  title: string;
+  description: string;
+  Visual: () => React.ReactElement;
+}[] = [
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <rect x="5" y="2" width="14" height="20" rx="2" />
         <circle cx="12" cy="17" r="1" fill="currentColor" stroke="none" />
@@ -247,10 +252,10 @@ const features = [
     title: 'Self-Service Kiosk',
     description:
       'Students type their first or last name into a search field. The kiosk filters every active student at that location and displays their current status. Tapping a name opens a confirmation card with the subject and session time limit. The screen resets 3 seconds after a successful check-in or check-out — no staff interaction required.',
-    visual: <KioskVisual />,
+    Visual: KioskVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <circle cx="12" cy="12" r="9" />
         <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
@@ -259,10 +264,10 @@ const features = [
     title: 'Session Time Limits',
     description:
       'A math-only or reading-only session caps at 30 minutes. A combined session caps at 60. The limit is locked in at check-in from the student\'s subject at that moment — editing their profile later doesn\'t change the running timer. Timers shift yellow at the halfway mark and red when time is up. Any session ending over the limit queues a parent SMS at checkout.',
-    visual: <TimerVisual />,
+    Visual: TimerVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -270,10 +275,10 @@ const features = [
     title: 'Live Dashboard',
     description:
       'The dashboard shows every student in session and every staff member on the floor, updated in real time via Supabase Realtime subscriptions. Each card displays name, assigned tutor, subject, elapsed time, and a color-coded timer pill. There is no polling interval and no manual refresh — changes arrive the moment they happen at any location.',
-    visual: <LiveVisual />,
+    Visual: LiveVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
         <circle cx="12" cy="7" r="4" />
@@ -282,10 +287,10 @@ const features = [
     title: 'Student Records',
     description:
       'Every student has a profile with name, date of birth, assigned subjects, home location, and an optional notes field. Notes appear as amber warning banners on the check-in screen before the session begins. A recent-sessions panel shows the last five completed sessions with date, duration, subject, and any note left by the attending tutor.',
-    visual: <RecordsVisual />,
+    Visual: RecordsVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
         <circle cx="9" cy="7" r="4" />
@@ -295,10 +300,10 @@ const features = [
     title: 'Staff Timesheets',
     description:
       'Staff clock in by selecting their name in the portal. The system records the location, clock-in time, and shift duration for every session. Owners can force a clock-out for anyone who forgets. Every record is searchable by staff member, location, and date range. The full timesheet can be exported as CSV, Excel, or landscape PDF from the same filtered view.',
-    visual: <TimesheetVisual />,
+    Visual: TimesheetVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
         <path d="M8 10h8M8 14h5" strokeLinecap="round" />
@@ -307,10 +312,10 @@ const features = [
     title: 'Parent SMS',
     description:
       'Each student can have multiple contacts — mother, father, guardian, or other. One is marked primary. When a student is checked out after exceeding their time limit, BrightMind sends a pickup text to the primary contact via Twilio. The message, destination number, delivery status, and Twilio SID are all written to a log table for a permanent record.',
-    visual: <SmsVisual />,
+    Visual: SmsVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <rect x="3" y="3" width="18" height="18" rx="2" />
         <path d="M7 17V11M11 17V8M15 17v-5M19 17V9" strokeLinecap="round" />
@@ -319,10 +324,10 @@ const features = [
     title: 'Analytics',
     description:
       'The analytics dashboard computes visit volume, average session duration, peak check-in hours by time of day, subject distribution, and the split between kiosk and staff check-ins. Data is aggregated for 7, 30, or 90-day windows. Every metric shows a percentage change against the prior equal period so trends are immediately visible.',
-    visual: <AnalyticsVisual />,
+    Visual: AnalyticsVisual,
   },
   {
-    icon: (
+    Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.25} className="w-8 h-8">
         <path d="M12 3v13m0 0l-4-4m4 4l4-4" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2" strokeLinecap="round" />
@@ -331,7 +336,7 @@ const features = [
     title: 'Data Exports',
     description:
       'Visit history and staff timesheet records can be exported as CSV, Excel (.xlsx via SheetJS), or landscape PDF (via jsPDF with autotable). The export reflects whatever filters are currently applied — location, date range, and staff selection all carry through. Everything generates in the browser with no server round-trip.',
-    visual: <ExportVisual />,
+    Visual: ExportVisual,
   },
 ];
 
@@ -420,7 +425,7 @@ export default function FeaturesPage() {
                 <span className="text-xs tracking-[0.22em] text-muted-foreground uppercase">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="text-muted-foreground">{feature.icon}</div>
+                <div className="text-muted-foreground"><feature.Icon /></div>
               </div>
 
               {/* Two-column: text left, visual right */}
@@ -448,7 +453,7 @@ export default function FeaturesPage() {
                   className="scroll-reveal mt-2"
                   style={{ transitionDelay: '220ms' }}
                 >
-                  {feature.visual}
+                  <feature.Visual />
                 </div>
               </div>
             </div>
