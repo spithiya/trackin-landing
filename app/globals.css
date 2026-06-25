@@ -12,16 +12,16 @@
 }
 
 :root {
-  --background: hsl(201 100% 13%);
+  --background: hsl(240 15% 8%);
   --foreground: hsl(0 0% 100%);
-  --muted-foreground: hsl(240 4% 66%);
+  --muted-foreground: hsl(240 8% 62%);
   --primary: hsl(0 0% 100%);
-  --primary-foreground: hsl(0 0% 4%);
-  --secondary: hsl(0 0% 10%);
-  --muted: hsl(0 0% 10%);
-  --accent: hsl(0 0% 10%);
-  --border: hsl(0 0% 18%);
-  --input: hsl(0 0% 18%);
+  --primary-foreground: hsl(240 15% 8%);
+  --secondary: hsl(240 12% 14%);
+  --muted: hsl(240 12% 14%);
+  --accent: hsl(255 90% 65%);
+  --border: hsl(240 12% 20%);
+  --input: hsl(240 12% 20%);
   --font-display: var(--font-instrument-serif, 'Instrument Serif', serif);
   --font-body: var(--font-inter, 'Inter', sans-serif);
 }
@@ -86,3 +86,65 @@ body {
 .animate-fade-rise-delay-2 {
   animation: fade-rise 0.8s ease-out 0.4s both;
 }
+
+/* Scroll-triggered reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.line-reveal {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.line-reveal.revealed {
+  transform: scaleX(1);
+}
+
+/* Bar chart reveal (scale up from bottom) */
+.bar-reveal {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bar-reveal.revealed {
+  transform: scaleY(1);
+}
+
+/* Animated background orbs */
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate(0px, 0px); }
+  33%       { transform: translate(50px, -70px); }
+  66%       { transform: translate(-30px, 40px); }
+}
+
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(-60px, -40px); }
+}
+
+@keyframes orb-drift-c {
+  0%, 100% { transform: translate(0px, 0px); }
+  50%       { transform: translate(35px, 60px); }
+}
+
+.orb-a { animation: orb-drift-a 24s ease-in-out infinite; }
+.orb-b { animation: orb-drift-b 30s ease-in-out infinite; }
+.orb-c { animation: orb-drift-c 20s ease-in-out infinite; }
+
+/* Timer pulse for over-time indicator */
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+.timer-pulse { animation: timer-pulse 1.5s ease-in-out infinite; }
