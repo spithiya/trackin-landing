@@ -370,15 +370,15 @@ export default function FeaturesPage() {
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div
           className="orb-a absolute -top-10 right-0 w-[550px] h-[550px] rounded-full blur-[160px]"
-          style={{ background: 'hsl(185 80% 45%)', opacity: 0.09 }}
+          style={{ background: 'hsl(255 90% 65%)', opacity: 0.12 }}
         />
         <div
           className="orb-b absolute top-1/2 -left-40 w-[480px] h-[480px] rounded-full blur-[140px]"
-          style={{ background: 'hsl(215 75% 52%)', opacity: 0.07 }}
+          style={{ background: 'hsl(270 60% 55%)', opacity: 0.09 }}
         />
         <div
           className="orb-c absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[130px]"
-          style={{ background: 'hsl(255 55% 58%)', opacity: 0.06 }}
+          style={{ background: 'hsl(230 75% 60%)', opacity: 0.08 }}
         />
       </div>
 

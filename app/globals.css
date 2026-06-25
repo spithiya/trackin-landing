@@ -12,16 +12,16 @@
 }
 
 :root {
-  --background: hsl(201 100% 13%);
+  --background: hsl(240 15% 8%);
   --foreground: hsl(0 0% 100%);
-  --muted-foreground: hsl(240 4% 66%);
+  --muted-foreground: hsl(240 8% 62%);
   --primary: hsl(0 0% 100%);
-  --primary-foreground: hsl(0 0% 4%);
-  --secondary: hsl(0 0% 10%);
-  --muted: hsl(0 0% 10%);
-  --accent: hsl(0 0% 10%);
-  --border: hsl(0 0% 18%);
-  --input: hsl(0 0% 18%);
+  --primary-foreground: hsl(240 15% 8%);
+  --secondary: hsl(240 12% 14%);
+  --muted: hsl(240 12% 14%);
+  --accent: hsl(255 90% 65%);
+  --border: hsl(240 12% 20%);
+  --input: hsl(240 12% 20%);
   --font-display: var(--font-instrument-serif, 'Instrument Serif', serif);
   --font-body: var(--font-inter, 'Inter', sans-serif);
 }
