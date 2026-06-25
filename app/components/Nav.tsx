@@ -1,21 +1,50 @@
-type NavLink = 'home' | 'features' | 'locations' | 'about' | 'contact';
+'use client';
 
-const links: { href: string; label: string; key: NavLink }[] = [
-  { href: '/', label: 'Home', key: 'home' },
-  { href: '/features', label: 'Features', key: 'features' },
-  { href: '#', label: 'Locations', key: 'locations' },
-  { href: '/about', label: 'About', key: 'about' },
-  { href: '#', label: 'Contact', key: 'contact' },
+import { useState, useEffect } from 'react';
+
+type Section = 'home' | 'features' | 'about' | 'contact';
+
+const links: { href: string; label: string; key: Section }[] = [
+  { href: '#home',     label: 'Home',     key: 'home' },
+  { href: '#features', label: 'Features', key: 'features' },
+  { href: '#about',    label: 'About',    key: 'about' },
+  { href: '#contact',  label: 'Contact',  key: 'contact' },
 ];
 
-export default function Nav({ active = 'home' }: { active?: NavLink }) {
+export default function Nav() {
+  const [active, setActive] = useState<Section>('home');
+
+  useEffect(() => {
+    const ids = links.map(l => l.key);
+    const track = () => {
+      const mid = window.innerHeight / 2;
+      let current: Section = 'home';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= mid) current = id as Section;
+      }
+      setActive(current);
+    };
+    window.addEventListener('scroll', track, { passive: true });
+    track();
+    return () => window.removeEventListener('scroll', track);
+  }, []);
+
   return (
-    <nav className="relative z-10">
-      <div className="max-w-7xl mx-auto px-8 py-6 flex flex-row items-center justify-between">
+    <nav
+      className="sticky top-0 z-50"
+      style={{
+        background: 'hsl(240 15% 8% / 0.78)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: '1px solid hsl(240 12% 20% / 0.5)',
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-8 py-4 flex flex-row items-center justify-between">
         <a
-          href="/"
+          href="#home"
           className="text-3xl tracking-tight text-foreground"
-          style={{ fontFamily: "var(--font-display)" }}
+          style={{ fontFamily: 'var(--font-display)' }}
         >
           BrightMind<sup className="text-xs">®</sup>
         </a>
