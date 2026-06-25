@@ -469,16 +469,16 @@ export default function FeaturesPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-5">
             <a
-              href="/auth/login?role=owner"
+              href="#contact"
               className="liquid-glass rounded-full px-12 py-4 text-base text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
             >
-              Owner Portal
+              Get in Touch
             </a>
             <a
-              href="/auth/login?role=staff"
+              href="/"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4 cursor-pointer"
             >
-              Staff Portal
+              Back to Home
             </a>
           </div>
         </section>

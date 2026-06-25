@@ -37,10 +37,10 @@ export default function Nav({ active = 'home' }: { active?: NavLink }) {
         </div>
 
         <a
-          href="/auth/login"
+          href="#contact"
           className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
         >
-          Enter Portal
+          Get Started
         </a>
       </div>
     </nav>

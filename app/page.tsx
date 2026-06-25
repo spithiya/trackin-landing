@@ -41,16 +41,16 @@ export default function Home() {
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row items-center gap-5 mt-12">
           <a
-            href="/auth/login?role=owner"
+            href="/features"
             className="liquid-glass rounded-full px-14 py-5 text-base text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
           >
-            Owner Portal
+            See Features
           </a>
           <a
-            href="/auth/login?role=staff"
+            href="#contact"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4 cursor-pointer"
           >
-            Staff Portal
+            Get in Touch
           </a>
         </div>
       </section>
