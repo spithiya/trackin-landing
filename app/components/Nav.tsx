@@ -4,7 +4,7 @@ const links: { href: string; label: string; key: NavLink }[] = [
   { href: '/', label: 'Home', key: 'home' },
   { href: '/features', label: 'Features', key: 'features' },
   { href: '#', label: 'Locations', key: 'locations' },
-  { href: '#', label: 'About', key: 'about' },
+  { href: '/about', label: 'About', key: 'about' },
   { href: '#', label: 'Contact', key: 'contact' },
 ];
 
