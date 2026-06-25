@@ -117,25 +117,27 @@ function RecordsVisual() {
 
 function TimesheetVisual() {
   const rows = [
-    { name: 'Sarah K.', inn: '9:00', out: '17:30', dur: '8h 30m' },
-    { name: 'Tom R.', inn: '10:00', out: '15:45', dur: '5h 45m' },
-    { name: 'Anna S.', inn: '8:30', out: null, dur: null },
+    { name: 'Sarah K.', inn: '9:00 am', out: '5:30 pm' },
+    { name: 'Tom R.', inn: '10:00 am', out: '3:45 pm' },
+    { name: 'Anna S.', inn: '8:30 am', out: null },
   ];
   return (
     <div className="liquid-glass rounded-2xl p-5">
-      <div className="grid grid-cols-[1fr_auto_auto] gap-x-4 text-xs text-muted-foreground mb-3 px-1">
-        <span>Staff</span><span>In</span><span>Out</span>
+      <div className="grid grid-cols-[1fr_5.5rem_5.5rem] text-xs text-muted-foreground mb-3 px-4">
+        <span>Staff</span>
+        <span>In</span>
+        <span>Out</span>
       </div>
       <div className="space-y-2">
         {rows.map((r) => (
-          <div key={r.name} className="liquid-glass rounded-xl px-4 py-3 grid grid-cols-[1fr_auto_auto] gap-x-4 items-center text-sm">
+          <div key={r.name} className="liquid-glass rounded-xl px-4 py-3 grid grid-cols-[1fr_5.5rem_5.5rem] items-center text-sm">
             <span className="text-foreground truncate">{r.name}</span>
             <span className="text-muted-foreground font-mono text-xs">{r.inn}</span>
             {r.out ? (
               <span className="text-muted-foreground font-mono text-xs">{r.out}</span>
             ) : (
-              <span className="flex items-center gap-1 text-xs" style={{ color: 'rgb(52,211,153)' }}>
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'rgb(52,211,153)' }} />
+              <span className="flex items-center gap-1.5 text-xs" style={{ color: 'rgb(52,211,153)' }}>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse flex-shrink-0" style={{ background: 'rgb(52,211,153)' }} />
                 Now
               </span>
             )}
