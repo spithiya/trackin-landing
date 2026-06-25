@@ -184,8 +184,8 @@ function AnalyticsVisual() {
         <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(52,211,153,0.1)', color: 'rgb(52,211,153)' }}>+14%</span>
       </div>
       <div className="flex items-end gap-2 h-24 mt-5">
-        {barData.map((b) => (
-          <div key={b.label} className="flex-1 flex flex-col items-center gap-1.5">
+        {barData.map((b, idx) => (
+          <div key={idx} className="flex-1 flex flex-col items-center gap-1.5">
             <div
               className="bar-reveal w-full rounded-sm"
               style={{
