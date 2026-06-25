@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Nav from '../components/Nav';
+import BackgroundAnimation from '../components/BackgroundAnimation';
 
 /* ─── Mini-mockup visual panels ─── */
 
@@ -366,7 +367,7 @@ export default function FeaturesPage() {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Animated background orbs */}
+      {/* Ambient indigo orbs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div
           className="orb-a absolute -top-10 right-0 w-[550px] h-[550px] rounded-full blur-[160px]"
@@ -381,6 +382,9 @@ export default function FeaturesPage() {
           style={{ background: 'hsl(230 75% 60%)', opacity: 0.08 }}
         />
       </div>
+
+      {/* Orbiting particle animation */}
+      <BackgroundAnimation opacity={0.65} />
 
       <div className="relative z-10">
         <Nav active="features" />

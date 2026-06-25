@@ -1,9 +1,10 @@
 import Nav from './components/Nav';
+import BackgroundAnimation from './components/BackgroundAnimation';
 
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
-      {/* Video Background */}
+      {/* Video background */}
       <video
         autoPlay
         loop
@@ -17,43 +18,86 @@ export default function Home() {
         />
       </video>
 
-      <Nav active="home" />
+      {/* Palette overlay — pulls the video into the obsidian + indigo palette */}
+      <div
+        className="absolute inset-0 z-[2]"
+        style={{
+          background:
+            'linear-gradient(to bottom, hsl(240 15% 6% / 0.55) 0%, hsl(245 20% 10% / 0.32) 40%, hsl(245 20% 10% / 0.32) 65%, hsl(240 15% 6% / 0.72) 100%)',
+        }}
+      />
 
-      {/* Hero */}
-      <section className="relative z-10 flex flex-col items-center text-center px-6 py-[90px]">
-        <h1
-          className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl leading-[0.95] max-w-7xl font-normal text-foreground"
-          style={{
-            fontFamily: "var(--font-display)",
-            letterSpacing: "-2.46px",
-          }}
-        >
-          Where every session builds a{" "}
-          <em className="not-italic text-muted-foreground">brighter</em>{" "}
-          <em className="not-italic text-muted-foreground">mind.</em>
-        </h1>
+      {/* Orbiting particle animation */}
+      <BackgroundAnimation opacity={0.45} />
 
-        <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
-          We&apos;re building tools for tutoring centers that care — tracking
-          sessions, managing staff, and creating space for every student to
-          focus, grow, and thrive.
-        </p>
+      <div className="relative z-10">
+        <Nav active="home" />
 
-        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row items-center gap-5 mt-12">
-          <a
-            href="/features"
-            className="liquid-glass rounded-full px-14 py-5 text-base text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
+        {/* Hero */}
+        <section className="flex flex-col items-center text-center px-6 py-[90px]">
+          {/* Pill badge */}
+          <div
+            className="animate-fade-rise mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs tracking-widest uppercase"
+            style={{
+              borderColor: 'hsl(255 90% 65% / 0.35)',
+              color: 'hsl(255 90% 75%)',
+              background: 'hsl(255 90% 65% / 0.08)',
+            }}
           >
-            See Features
-          </a>
-          <a
-            href="#contact"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4 cursor-pointer"
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{
+                background: 'hsl(255 90% 65%)',
+                boxShadow: '0 0 6px hsl(255 90% 65%)',
+              }}
+            />
+            Tutoring Center CRM
+          </div>
+
+          <h1
+            className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl leading-[0.95] max-w-5xl font-normal text-foreground"
+            style={{
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-2.46px',
+            }}
           >
-            Get in Touch
-          </a>
-        </div>
-      </section>
+            Where every session builds a{' '}
+            <em
+              className="not-italic"
+              style={{
+                color: 'hsl(255 90% 72%)',
+                textShadow: '0 0 60px hsl(255 90% 65% / 0.45)',
+              }}
+            >
+              brighter
+            </em>{' '}
+            <em className="not-italic text-muted-foreground">mind.</em>
+          </h1>
+
+          <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
+            We&apos;re building tools for tutoring centers that care — tracking
+            sessions, managing staff, and creating space for every student to
+            focus, grow, and thrive.
+          </p>
+
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row items-center gap-5 mt-12">
+            <a
+              href="/features"
+              className="liquid-glass rounded-full px-14 py-5 text-base text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
+              style={{ boxShadow: '0 0 32px hsl(255 90% 65% / 0.18)' }}
+            >
+              See Features
+            </a>
+            <a
+              href="#contact"
+              className="text-sm transition-colors underline underline-offset-4 cursor-pointer"
+              style={{ color: 'hsl(255 90% 72%)' }}
+            >
+              Get in Touch
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
