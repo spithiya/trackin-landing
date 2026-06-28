@@ -276,6 +276,42 @@ export default function Home() {
           <p className="text-xs text-muted-foreground leading-relaxed max-w-sm">
             🎁 Joining the waitlist is 100% free. No credit card required to lock in your lifetime discount.
           </p>
+
+          {/* Direct contact */}
+          <div className="w-full mt-16 pt-10" style={{ borderTop: '1px solid hsl(240 12% 20%)' }}>
+            <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
+              Or reach us directly
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              {[
+                { name: 'Samar Pithiya', phone: '302-521-9375', email: 'samar.pithiya@gmail.com' },
+                { name: 'Zehan Li',      phone: '484-477-6726', email: 'zehanli2025@gmail.com'  },
+              ].map(({ name, phone, email }) => (
+                <div key={name} className="liquid-glass rounded-2xl p-6 flex flex-col gap-3">
+                  <p className="text-foreground font-medium" style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}>{name}</p>
+                  <a
+                    href={`tel:${phone.replace(/-/g, '')}`}
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 flex-shrink-0">
+                      <path d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5z" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {phone}
+                  </a>
+                  <a
+                    href={`mailto:${email}`}
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4 flex-shrink-0">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    {email}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
