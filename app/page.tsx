@@ -284,11 +284,19 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
               {[
-                { name: 'Samar Pithiya', phone: '302-521-9375', email: 'samar.pithiya@gmail.com' },
-                { name: 'Zehan Li',      phone: '484-477-6726', email: 'zehanli2025@gmail.com'  },
-              ].map(({ name, phone, email }) => (
+                { name: 'Samar Pithiya', phone: '302-521-9375', email: 'samar.pithiya@gmail.com', photo: '/samar.png' },
+                { name: 'Zehan Li',      phone: '484-477-6726', email: 'zehanli2025@gmail.com',   photo: '/zehan.png' },
+              ].map(({ name, phone, email, photo }) => (
                 <div key={name} className="liquid-glass rounded-2xl p-6 flex flex-col gap-3">
-                  <p className="text-foreground font-medium" style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}>{name}</p>
+                  <div className="flex items-center gap-4 mb-1">
+                    <img
+                      src={photo}
+                      alt={name}
+                      className="w-14 h-14 rounded-full object-cover object-top flex-shrink-0"
+                      style={{ border: '1px solid hsl(255 90% 65% / 0.25)' }}
+                    />
+                    <p className="text-foreground font-medium" style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}>{name}</p>
+                  </div>
                   <a
                     href={`tel:${phone.replace(/-/g, '')}`}
                     className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
