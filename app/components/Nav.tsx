@@ -34,10 +34,10 @@ export default function Nav() {
     <nav
       className="sticky top-0 z-50"
       style={{
-        background: 'hsl(240 15% 8% / 0.78)',
+        background: 'hsl(0 0% 100% / 0.88)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid hsl(240 12% 20% / 0.5)',
+        borderBottom: '1px solid hsl(214 25% 88% / 0.8)',
       }}
     >
       <div className="max-w-7xl mx-auto px-8 py-4 flex flex-row items-center justify-between">

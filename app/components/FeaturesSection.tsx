@@ -106,7 +106,7 @@ function RecordsVisual() {
         </div>
         <div className="flex gap-2">
           <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(94,234,212,0.1)', color: 'rgb(94,234,212)' }}>Math</span>
-          <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(129,140,248,0.1)', color: 'rgb(129,140,248)' }}>Reading</span>
+          <span className="text-xs px-2 py-0.5 rounded-full" style={{ background: 'rgba(59,130,246,0.12)', color: 'rgb(37,99,235)' }}>Reading</span>
         </div>
         <p className="text-xs text-muted-foreground">Westside Center · Active</p>
       </div>
@@ -189,7 +189,7 @@ function AnalyticsVisual() {
           <div key={idx} className="flex-1 flex flex-col items-center gap-1.5">
             <div
               className="bar-reveal w-full rounded-sm"
-              style={{ height: `${b.h}px`, background: 'rgba(255,255,255,0.12)', transitionDelay: b.d }}
+              style={{ height: `${b.h}px`, background: 'rgba(59,130,246,0.22)', transitionDelay: b.d }}
             />
             <span className="text-[10px] text-muted-foreground">{b.label}</span>
           </div>
@@ -360,15 +360,15 @@ export default function FeaturesSection() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="orb-a absolute -top-10 right-0 w-[550px] h-[550px] rounded-full blur-[160px]"
-          style={{ background: 'hsl(255 90% 65%)', opacity: 0.12 }}
+          style={{ background: 'hsl(217 90% 60%)', opacity: 0.13 }}
         />
         <div
           className="orb-b absolute top-1/2 -left-40 w-[480px] h-[480px] rounded-full blur-[140px]"
-          style={{ background: 'hsl(270 60% 55%)', opacity: 0.09 }}
+          style={{ background: 'hsl(200 80% 65%)', opacity: 0.10 }}
         />
         <div
           className="orb-c absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[130px]"
-          style={{ background: 'hsl(230 75% 60%)', opacity: 0.08 }}
+          style={{ background: 'hsl(225 80% 65%)', opacity: 0.09 }}
         />
       </div>
 

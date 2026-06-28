@@ -11,18 +11,18 @@ export default function Home() {
       {/* ── Hero ────────────────────────────────────────────── */}
       <section id="home" className="min-h-screen relative overflow-hidden bg-background flex flex-col">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute top-0 right-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(255 90% 65%)', opacity: 0.11 }} />
-          <div className="orb-b absolute top-1/3 -left-20 w-[420px] h-[420px] rounded-full blur-[130px]" style={{ background: 'hsl(235 80% 60%)', opacity: 0.08 }} />
-          <div className="orb-c absolute bottom-10 left-1/3 w-[380px] h-[380px] rounded-full blur-[120px]" style={{ background: 'hsl(268 55% 52%)', opacity: 0.07 }} />
+          <div className="orb-a absolute top-0 right-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(217 90% 50%)', opacity: 0.11 }} />
+          <div className="orb-b absolute top-1/3 -left-20 w-[420px] h-[420px] rounded-full blur-[130px]" style={{ background: 'hsl(200 80% 65%)', opacity: 0.11 }} />
+          <div className="orb-c absolute bottom-10 left-1/3 w-[380px] h-[380px] rounded-full blur-[120px]" style={{ background: 'hsl(225 80% 65%)', opacity: 0.10 }} />
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-24">
           {/* Audience label */}
           <div
             className="animate-fade-rise mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs tracking-widest uppercase"
-            style={{ borderColor: 'hsl(255 90% 65% / 0.35)', color: 'hsl(255 90% 75%)', background: 'hsl(255 90% 65% / 0.08)' }}
+            style={{ borderColor: 'hsl(255 90% 65% / 0.35)', color: 'hsl(217 90% 55%)', background: 'hsl(255 90% 65% / 0.08)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(255 90% 65%)', boxShadow: '0 0 6px hsl(255 90% 65%)' }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(217 90% 50%)', boxShadow: '0 0 6px hsl(217 90% 50%)' }} />
             For K-12 learning center owners
           </div>
 
@@ -31,7 +31,7 @@ export default function Home() {
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-2px' }}
           >
             Stop Fighting Spreadsheets.{' '}
-            <em className="not-italic" style={{ color: 'hsl(255 90% 72%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
+            <em className="not-italic" style={{ color: 'hsl(217 90% 45%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
               Start Growing
             </em>{' '}
             <em className="not-italic text-muted-foreground">Your Learning Center.</em>
@@ -50,7 +50,7 @@ export default function Home() {
             >
               Secure Early Access
             </a>
-            <a href="#features" className="text-sm transition-colors underline underline-offset-4 cursor-pointer" style={{ color: 'hsl(255 90% 72%)' }}>
+            <a href="#features" className="text-sm transition-colors underline underline-offset-4 cursor-pointer" style={{ color: 'hsl(217 90% 45%)' }}>
               See What&apos;s Inside
             </a>
           </div>
@@ -74,8 +74,8 @@ export default function Home() {
       <section className="relative overflow-hidden bg-background py-32">
         {/* Orbs — deep muted indigo + faint amber to signal warning */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-b absolute -top-20 left-0 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: 'hsl(240 40% 30%)', opacity: 0.14 }} />
-          <div className="orb-c absolute bottom-0 right-0 w-[420px] h-[420px] rounded-full blur-[140px]" style={{ background: 'hsl(255 35% 35%)', opacity: 0.10 }} />
+          <div className="orb-b absolute -top-20 left-0 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: 'hsl(217 80% 62%)', opacity: 0.13 }} />
+          <div className="orb-c absolute bottom-0 right-0 w-[420px] h-[420px] rounded-full blur-[140px]" style={{ background: 'hsl(200 75% 65%)', opacity: 0.10 }} />
           <div className="orb-a absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full blur-[120px]" style={{ background: 'hsl(38 70% 45%)', opacity: 0.05 }} />
         </div>
 
@@ -106,7 +106,7 @@ export default function Home() {
               {
                 label: 'The cost',
                 body: 'Owners spend more time fighting admin work than running their centers. Manual data systems aren\'t just inefficient — they\'re inevitable points of failure.',
-                accent: 'hsl(255 70% 68%)',
+                accent: 'hsl(217 80% 50%)',
               },
             ].map(({ label, body, accent }) => (
               <div key={label} className="liquid-glass rounded-2xl p-8 flex flex-col gap-4">
@@ -128,9 +128,9 @@ export default function Home() {
       <section id="about" className="relative overflow-hidden bg-background py-32">
         {/* Orbs — warm purple/violet */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute -top-10 left-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(275 65% 60%)', opacity: 0.11 }} />
-          <div className="orb-b absolute top-1/2 right-0 w-[440px] h-[440px] rounded-full blur-[130px]" style={{ background: 'hsl(255 70% 55%)', opacity: 0.09 }} />
-          <div className="orb-c absolute bottom-0 right-1/3 w-[360px] h-[360px] rounded-full blur-[120px]" style={{ background: 'hsl(285 50% 52%)', opacity: 0.07 }} />
+          <div className="orb-a absolute -top-10 left-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(210 80% 65%)', opacity: 0.12 }} />
+          <div className="orb-b absolute top-1/2 right-0 w-[440px] h-[440px] rounded-full blur-[130px]" style={{ background: 'hsl(217 85% 62%)', opacity: 0.10 }} />
+          <div className="orb-c absolute bottom-0 right-1/3 w-[360px] h-[360px] rounded-full blur-[120px]" style={{ background: 'hsl(200 75% 68%)', opacity: 0.09 }} />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-8">
@@ -193,7 +193,7 @@ export default function Home() {
                       fontFamily: 'var(--font-display)',
                       background: 'hsl(255 90% 65% / 0.12)',
                       border: '1px solid hsl(255 90% 65% / 0.25)',
-                      color: 'hsl(255 90% 75%)',
+                      color: 'hsl(217 90% 55%)',
                       letterSpacing: '0.02em',
                     }}
                   >
@@ -210,7 +210,7 @@ export default function Home() {
           </div>
 
           {/* ── Mission & Vision ── */}
-          <div className="border-t pt-16" style={{ borderColor: 'hsl(240 12% 20%)' }}>
+          <div className="border-t pt-16" style={{ borderColor: 'hsl(214 25% 88%)' }}>
             <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">What we stand for</p>
             <h3
               className="text-4xl sm:text-5xl font-normal text-foreground leading-[0.95] mb-10 max-w-2xl"
@@ -234,8 +234,8 @@ export default function Home() {
       <section id="contact" className="min-h-screen relative overflow-hidden bg-background flex flex-col">
         {/* Orbs — cool blue-violet, minimal */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute top-10 right-10 w-[460px] h-[460px] rounded-full blur-[140px]" style={{ background: 'hsl(240 70% 55%)', opacity: 0.10 }} />
-          <div className="orb-b absolute bottom-20 -left-20 w-[400px] h-[400px] rounded-full blur-[130px]" style={{ background: 'hsl(260 60% 50%)', opacity: 0.07 }} />
+          <div className="orb-a absolute top-10 right-10 w-[460px] h-[460px] rounded-full blur-[140px]" style={{ background: 'hsl(217 90% 60%)', opacity: 0.12 }} />
+          <div className="orb-b absolute bottom-20 -left-20 w-[400px] h-[400px] rounded-full blur-[130px]" style={{ background: 'hsl(200 80% 65%)', opacity: 0.09 }} />
         </div>
 
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-8 py-32 text-center max-w-2xl mx-auto w-full">
@@ -247,7 +247,7 @@ export default function Home() {
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Lock in early access.{' '}
-            <em className="not-italic" style={{ color: 'hsl(255 90% 72%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
+            <em className="not-italic" style={{ color: 'hsl(217 90% 45%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
               Save big forever.
             </em>
           </h2>
@@ -278,7 +278,7 @@ export default function Home() {
           </p>
 
           {/* Direct contact */}
-          <div className="w-full mt-16 pt-10" style={{ borderTop: '1px solid hsl(240 12% 20%)' }}>
+          <div className="w-full mt-16 pt-10" style={{ borderTop: '1px solid hsl(214 25% 88%)' }}>
             <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
               Or reach us directly
             </p>
