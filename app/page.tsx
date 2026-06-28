@@ -292,8 +292,8 @@ export default function Home() {
                     <img
                       src={photo}
                       alt={name}
-                      className="w-14 h-14 rounded-full object-cover object-top flex-shrink-0"
-                      style={{ border: '1px solid hsl(255 90% 65% / 0.25)' }}
+                      className="w-20 h-20 rounded-full object-cover object-center flex-shrink-0"
+                      style={{ border: '1px solid hsl(255 90% 65% / 0.25)', objectPosition: 'center 15%' }}
                     />
                     <p className="text-foreground font-medium" style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem' }}>{name}</p>
                   </div>
