@@ -23,7 +23,7 @@ function makeParticles(count: number): Particle[] {
     speed: (0.00019 + Math.random() * 0.00055) * (Math.random() > 0.5 ? 1 : -1),
     dotR: 0.6 + Math.random() * 1.5,
     alpha: 0.12 + Math.random() * 0.28,
-    hue: 205 + Math.random() * 25,
+    hue: 38 + Math.random() * 12,
   }));
 }
 
@@ -59,8 +59,8 @@ export default function BackgroundAnimation({ opacity = 0.75 }: { opacity?: numb
         // soft glow halo
         const glowR = p.dotR * 9;
         const grd = ctx.createRadialGradient(x, y, 0, x, y, glowR);
-        grd.addColorStop(0, `hsla(${p.hue}, 80%, 52%, ${p.alpha})`);
-        grd.addColorStop(1, `hsla(${p.hue}, 80%, 52%, 0)`);
+        grd.addColorStop(0, `hsla(${p.hue}, 90%, 50%, ${p.alpha})`);
+        grd.addColorStop(1, `hsla(${p.hue}, 90%, 50%, 0)`);
         ctx.beginPath();
         ctx.arc(x, y, glowR, 0, Math.PI * 2);
         ctx.fillStyle = grd;
@@ -69,7 +69,7 @@ export default function BackgroundAnimation({ opacity = 0.75 }: { opacity?: numb
         // bright core
         ctx.beginPath();
         ctx.arc(x, y, p.dotR, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 90%, 38%, ${Math.min(p.alpha + 0.18, 0.9)})`;
+        ctx.fillStyle = `hsla(${p.hue}, 95%, 42%, ${Math.min(p.alpha + 0.18, 0.9)})`;
         ctx.fill();
       }
 
