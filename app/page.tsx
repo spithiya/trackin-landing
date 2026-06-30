@@ -182,7 +182,7 @@ export default function Home() {
                 initials: 'SP',
                 name: 'Samar',
                 role: 'Co-Founder',
-                bio: '10 years as a Kumon student (ages 5–15). Experienced staff tutor who managed a fast-paced learning center, mentored 150+ students in math and reading, and logged 1,000+ hours overseeing worksheet grading and academic record entries. She knows the daily reality of center operations from the inside.',
+                bio: 'CS and AI student at Purdue. 10 years as a Kumon student (ages 5–15). Experienced staff tutor who managed a fast-paced learning center, mentored 150+ students in math and reading, and logged 1,000+ hours overseeing worksheet grading and academic record entries. He knows the daily reality of center operations from the inside.',
               },
             ].map(({ initials, name, role, bio }) => (
               <div key={initials} className="liquid-glass rounded-2xl p-8 flex flex-col gap-6">
