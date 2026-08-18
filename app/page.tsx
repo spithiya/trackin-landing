@@ -124,7 +124,7 @@ export default function Home() {
       {/* ── Features / Pillars ──────────────────────────────── */}
       <FeaturesSection />
 
-      {/* ── About — Founders + Mission ──────────────────────── */}
+      {/* ── About — Founder + Mission ───────────────────────── */}
       <section id="about" className="relative overflow-hidden bg-background py-32">
         {/* Orbs — warm purple/violet */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-8">
-          {/* ── Founders ── */}
+          {/* ── Founder ── */}
           <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">Our story</p>
           <h2
             className="text-5xl sm:text-6xl font-normal text-foreground leading-[0.95] mb-16 max-w-2xl"
@@ -169,19 +169,13 @@ export default function Home() {
             </p>
           </blockquote>
 
-          {/* Founder cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+          {/* Founder card */}
+          <div className="grid grid-cols-1 max-w-md gap-6 mb-24">
             {[
-              {
-                initials: 'ZL',
-                name: 'Zehan',
-                role: 'Co-Founder',
-                bio: 'Math & CS student at NYU. 8+ years as a Kumon student — giving him a firsthand understanding of what parents expect and what students need. A tech educator who has spoken at national conferences, inspiring 20,000+ students and professionals to leverage AI and app development for societal impact.',
-              },
               {
                 initials: 'SP',
                 name: 'Samar',
-                role: 'Co-Founder',
+                role: 'Founder',
                 bio: 'CS and AI student at Purdue. 10 years as a Kumon student (ages 5–15). Experienced staff tutor who managed a fast-paced learning center, mentored 150+ students in math and reading, and logged 1,000+ hours overseeing worksheet grading and academic record entries. He knows the daily reality of center operations from the inside.',
               },
             ].map(({ initials, name, role, bio }) => (
@@ -282,10 +276,9 @@ export default function Home() {
             <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
               Or reach us directly
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+            <div className="grid grid-cols-1 max-w-sm mx-auto gap-4 text-left">
               {[
                 { name: 'Samar Pithiya', phone: '302-521-9375', email: 'samar.pithiya@gmail.com', photo: '/samar.png' },
-                { name: 'Zehan Li',      phone: '484-477-6726', email: 'zehanli2025@gmail.com',   photo: '/zehan.png' },
               ].map(({ name, phone, email, photo }) => (
                 <div key={name} className="liquid-glass rounded-2xl p-6 flex flex-col gap-3">
                   <div className="flex items-center gap-4 mb-1">
