@@ -153,7 +153,7 @@ function SmsVisual() {
       <p className="text-xs text-muted-foreground tracking-widest uppercase mb-4">Twilio · Primary contact</p>
       <div className="flex justify-end">
         <div className="liquid-glass rounded-2xl rounded-br-sm p-4 text-sm text-foreground leading-relaxed max-w-[85%]">
-          Hi! Alex has finished their session at BrightMind and is ready for pickup.
+          Hi! Alex has finished their session at TrackIn and is ready for pickup.
         </div>
       </div>
       <div className="flex justify-end items-center gap-1.5">
@@ -304,7 +304,7 @@ const features: {
     ),
     title: 'Parent SMS',
     description:
-      'Each student can have multiple contacts — mother, father, guardian, or other. One is marked primary. When a student is checked out after exceeding their time limit, BrightMind sends a pickup text to the primary contact via Twilio. The message, destination number, delivery status, and Twilio SID are all written to a log table for a permanent record.',
+      'Each student can have multiple contacts — mother, father, guardian, or other. One is marked primary. When a student is checked out after exceeding their time limit, TrackIn sends a pickup text to the primary contact via Twilio. The message, destination number, delivery status, and Twilio SID are all written to a log table for a permanent record.',
     Visual: SmsVisual,
   },
   {

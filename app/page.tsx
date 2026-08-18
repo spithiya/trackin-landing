@@ -38,7 +38,7 @@ export default function Home() {
           </h1>
 
           <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-xl mt-8 leading-relaxed">
-            BrightMind replaces the chaos of paper logs and messy spreadsheets with a single,
+            TrackIn replaces the chaos of paper logs and messy spreadsheets with a single,
             foolproof operations platform designed specifically for K-12 learning centers.
           </p>
 
@@ -165,7 +165,7 @@ export default function Home() {
               className="text-xl sm:text-2xl text-foreground leading-relaxed pl-4 mt-5"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              That was my breaking point. I knew there had to be a better way — so I built BrightMind.
+              That was my breaking point. I knew there had to be a better way — so I built TrackIn.
             </p>
           </blockquote>
 

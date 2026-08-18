@@ -46,7 +46,7 @@ export default function Nav() {
           className="text-3xl tracking-tight text-foreground"
           style={{ fontFamily: 'var(--font-display)' }}
         >
-          BrightMind<sup className="text-xs">®</sup>
+          TrackIn<sup className="text-xs">®</sup>
         </a>
 
         <div className="hidden md:flex items-center gap-8">

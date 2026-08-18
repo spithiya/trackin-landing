@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BrightMind — Tutoring Center CRM",
+  title: "TrackIn — Tutoring Center CRM",
   description:
     "The CRM built for tutoring centers. Track sessions, manage staff, and keep every student moving forward.",
 };
