@@ -355,23 +355,7 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section id="features" className="relative overflow-hidden bg-background">
-      {/* Orbs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          className="orb-a absolute -top-10 right-0 w-[550px] h-[550px] rounded-full blur-[160px]"
-          style={{ background: 'hsl(217 90% 60%)', opacity: 0.13 }}
-        />
-        <div
-          className="orb-b absolute top-1/2 -left-40 w-[480px] h-[480px] rounded-full blur-[140px]"
-          style={{ background: 'hsl(200 80% 65%)', opacity: 0.10 }}
-        />
-        <div
-          className="orb-c absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[130px]"
-          style={{ background: 'hsl(225 80% 65%)', opacity: 0.09 }}
-        />
-      </div>
-
+    <section id="features" className="relative bg-background">
       <div className="relative z-10">
         {/* Section intro */}
         <div className="flex flex-col items-center text-center px-6 pt-24 pb-4">

@@ -1,28 +1,20 @@
 import Nav from './components/Nav';
-import BackgroundAnimation from './components/BackgroundAnimation';
 import FeaturesSection from './components/FeaturesSection';
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <BackgroundAnimation opacity={0.65} />
 
       {/* ── Hero ────────────────────────────────────────────── */}
-      <section id="home" className="min-h-screen relative overflow-hidden bg-background flex flex-col">
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute top-0 right-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(217 90% 50%)', opacity: 0.11 }} />
-          <div className="orb-b absolute top-1/3 -left-20 w-[420px] h-[420px] rounded-full blur-[130px]" style={{ background: 'hsl(200 80% 65%)', opacity: 0.11 }} />
-          <div className="orb-c absolute bottom-10 left-1/3 w-[380px] h-[380px] rounded-full blur-[120px]" style={{ background: 'hsl(225 80% 65%)', opacity: 0.10 }} />
-        </div>
-
+      <section id="home" className="min-h-screen relative bg-background flex flex-col">
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-24">
           {/* Audience label */}
           <div
             className="animate-fade-rise mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs tracking-widest uppercase"
-            style={{ borderColor: 'hsl(255 90% 65% / 0.35)', color: 'hsl(217 90% 55%)', background: 'hsl(255 90% 65% / 0.08)' }}
+            style={{ borderColor: 'color-mix(in srgb, var(--primary) 35%, transparent)', color: 'var(--primary)', background: 'color-mix(in srgb, var(--primary) 8%, transparent)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'hsl(217 90% 50%)', boxShadow: '0 0 6px hsl(217 90% 50%)' }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--primary)', boxShadow: '0 0 6px var(--primary)' }} />
             For K-12 learning center owners
           </div>
 
@@ -31,7 +23,7 @@ export default function Home() {
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-2px' }}
           >
             Stop Fighting Spreadsheets.{' '}
-            <em className="not-italic" style={{ color: 'hsl(217 90% 45%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
+            <em className="not-italic" style={{ color: 'var(--primary)' }}>
               Start Growing
             </em>{' '}
             <em className="not-italic text-muted-foreground">Your Learning Center.</em>
@@ -46,11 +38,11 @@ export default function Home() {
             <a
               href="#contact"
               className="liquid-glass rounded-full px-14 py-5 text-base text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
-              style={{ boxShadow: '0 0 32px hsl(255 90% 65% / 0.2)' }}
+              style={{ boxShadow: '0 0 32px color-mix(in srgb, var(--accent) 25%, transparent)' }}
             >
               Secure Early Access
             </a>
-            <a href="#features" className="text-sm transition-colors underline underline-offset-4 cursor-pointer" style={{ color: 'hsl(217 90% 45%)' }}>
+            <a href="#features" className="text-sm transition-colors underline underline-offset-4 cursor-pointer" style={{ color: 'var(--primary)' }}>
               See What&apos;s Inside
             </a>
           </div>
@@ -71,14 +63,7 @@ export default function Home() {
       </section>
 
       {/* ── The Chaos / Problem ─────────────────────────────── */}
-      <section className="relative overflow-hidden bg-background py-32">
-        {/* Orbs — deep muted indigo + faint amber to signal warning */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-b absolute -top-20 left-0 w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: 'hsl(217 80% 62%)', opacity: 0.13 }} />
-          <div className="orb-c absolute bottom-0 right-0 w-[420px] h-[420px] rounded-full blur-[140px]" style={{ background: 'hsl(200 75% 65%)', opacity: 0.10 }} />
-          <div className="orb-a absolute top-1/2 right-1/3 w-[300px] h-[300px] rounded-full blur-[120px]" style={{ background: 'hsl(38 70% 45%)', opacity: 0.05 }} />
-        </div>
-
+      <section className="relative bg-secondary py-32">
         <div className="relative z-10 max-w-5xl mx-auto px-8">
           <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">
             The spreadsheet nightmare
@@ -96,7 +81,7 @@ export default function Home() {
               {
                 label: 'The reality',
                 body: 'Student attendance, staff hours, and payroll all live in separate spreadsheets — and by end of week they disagree with each other.',
-                accent: 'hsl(38 80% 55%)',
+                accent: 'var(--accent)',
               },
               {
                 label: 'The failure mode',
@@ -106,7 +91,7 @@ export default function Home() {
               {
                 label: 'The cost',
                 body: 'Owners spend more time fighting admin work than running their centers. Manual data systems aren\'t just inefficient — they\'re inevitable points of failure.',
-                accent: 'hsl(217 80% 50%)',
+                accent: 'var(--primary)',
               },
             ].map(({ label, body, accent }) => (
               <div key={label} className="liquid-glass rounded-2xl p-8 flex flex-col gap-4">
@@ -125,14 +110,7 @@ export default function Home() {
       <FeaturesSection />
 
       {/* ── About — Founder + Mission ───────────────────────── */}
-      <section id="about" className="relative overflow-hidden bg-background py-32">
-        {/* Orbs — warm purple/violet */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute -top-10 left-0 w-[520px] h-[520px] rounded-full blur-[150px]" style={{ background: 'hsl(210 80% 65%)', opacity: 0.12 }} />
-          <div className="orb-b absolute top-1/2 right-0 w-[440px] h-[440px] rounded-full blur-[130px]" style={{ background: 'hsl(217 85% 62%)', opacity: 0.10 }} />
-          <div className="orb-c absolute bottom-0 right-1/3 w-[360px] h-[360px] rounded-full blur-[120px]" style={{ background: 'hsl(200 75% 68%)', opacity: 0.09 }} />
-        </div>
-
+      <section id="about" className="relative bg-secondary py-32">
         <div className="relative z-10 max-w-5xl mx-auto px-8">
           {/* ── Founder ── */}
           <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">Our story</p>
@@ -185,9 +163,9 @@ export default function Home() {
                     className="w-14 h-14 rounded-full flex items-center justify-center text-base font-normal flex-shrink-0"
                     style={{
                       fontFamily: 'var(--font-display)',
-                      background: 'hsl(255 90% 65% / 0.12)',
-                      border: '1px solid hsl(255 90% 65% / 0.25)',
-                      color: 'hsl(217 90% 55%)',
+                      background: 'color-mix(in srgb, var(--primary) 12%, transparent)',
+                      border: '1px solid color-mix(in srgb, var(--primary) 25%, transparent)',
+                      color: 'var(--primary)',
                       letterSpacing: '0.02em',
                     }}
                   >
@@ -225,13 +203,7 @@ export default function Home() {
       </section>
 
       {/* ── Contact / CTA ───────────────────────────────────── */}
-      <section id="contact" className="min-h-screen relative overflow-hidden bg-background flex flex-col">
-        {/* Orbs — cool blue-violet, minimal */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="orb-a absolute top-10 right-10 w-[460px] h-[460px] rounded-full blur-[140px]" style={{ background: 'hsl(217 90% 60%)', opacity: 0.12 }} />
-          <div className="orb-b absolute bottom-20 -left-20 w-[400px] h-[400px] rounded-full blur-[130px]" style={{ background: 'hsl(200 80% 65%)', opacity: 0.09 }} />
-        </div>
-
+      <section id="contact" className="min-h-screen relative section-tint flex flex-col">
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-8 py-32 text-center max-w-2xl mx-auto w-full">
           <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">
             Private beta — limited spots
@@ -241,7 +213,7 @@ export default function Home() {
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Lock in early access.{' '}
-            <em className="not-italic" style={{ color: 'hsl(217 90% 45%)', textShadow: '0 0 60px hsl(255 90% 65% / 0.4)' }}>
+            <em className="not-italic" style={{ color: 'var(--primary)' }}>
               Save big forever.
             </em>
           </h2>
@@ -261,7 +233,7 @@ export default function Home() {
             <button
               type="submit"
               className="liquid-glass rounded-full px-8 py-4 text-sm text-foreground whitespace-nowrap hover:scale-[1.03] transition-transform"
-              style={{ boxShadow: '0 0 28px hsl(255 90% 65% / 0.2)' }}
+              style={{ boxShadow: '0 0 28px color-mix(in srgb, var(--accent) 25%, transparent)' }}
             >
               Secure My Discounted Access
             </button>
@@ -284,7 +256,7 @@ export default function Home() {
                   <div className="flex items-center gap-4 mb-1">
                     <div
                       className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0"
-                      style={{ border: '1px solid hsl(255 90% 65% / 0.25)' }}
+                      style={{ border: '1px solid color-mix(in srgb, var(--primary) 25%, transparent)' }}
                     >
                       <img
                         src={photo}
