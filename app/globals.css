@@ -13,15 +13,15 @@
 }
 
 :root {
-  /* Palette C — Forest Green + Sand */
+  /* Palette D — Terracotta/Orange + Navy */
   --background: hsl(0 0% 100%);
   --foreground: hsl(220 40% 8%);
   --muted-foreground: hsl(220 12% 46%);
-  --primary: hsl(152 45% 32%);
+  --primary: hsl(14 75% 52%);
   --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(214 32% 95%);
   --muted: hsl(214 32% 95%);
-  --accent: hsl(20 70% 55%);
+  --accent: hsl(220 40% 15%);
   --border: hsl(214 25% 88%);
   --input: hsl(214 25% 88%);
   --font-display: var(--font-instrument-serif, 'Instrument Serif', serif);
