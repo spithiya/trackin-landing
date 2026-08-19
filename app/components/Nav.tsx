@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 type Section = 'home' | 'features' | 'about' | 'contact';
 
@@ -65,12 +66,20 @@ export default function Nav() {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
-        >
-          Get Started
-        </a>
+        <div className="flex items-center gap-5">
+          <Link
+            href="/login"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Log In
+          </Link>
+          <a
+            href="#contact"
+            className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
+          >
+            Get Started
+          </a>
+        </div>
       </div>
     </nav>
   );
