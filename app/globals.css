@@ -26,6 +26,15 @@
   --input: hsl(214 25% 88%);
   --font-display: var(--font-instrument-serif, 'Instrument Serif', serif);
   --font-body: var(--font-inter, 'Inter', sans-serif);
+
+  /* Supplementary blue variety for content sections — deliberately
+     distinct hues/shades from --primary rather than derived from it,
+     so the page doesn't read as one blue repeated everywhere. */
+  --blue-navy: hsl(224 62% 19%);
+  --blue-azure: hsl(203 80% 40%);
+  --blue-teal: hsl(193 55% 38%);
+  --blue-ice: hsl(206 70% 95%);
+  --blue-periwinkle: hsl(233 55% 94%);
 }
 
 html {
@@ -88,6 +97,33 @@ section[id] {
 
 .text-invert-muted {
   color: hsl(0 0% 100% / 0.72);
+}
+
+/* Tone tiers for content-section variety — bold (solid gradient, needs
+   invert text), medium (solid, needs invert text), tint (pale, keeps
+   normal text) — each pulling from a different supplementary blue. */
+.tone-bold-navy {
+  background: linear-gradient(135deg, var(--blue-navy), color-mix(in srgb, var(--blue-navy) 70%, black));
+}
+
+.tone-bold-azure {
+  background: linear-gradient(135deg, var(--blue-azure), color-mix(in srgb, var(--blue-azure) 75%, black));
+}
+
+.tone-medium-teal {
+  background: linear-gradient(135deg, var(--blue-teal), color-mix(in srgb, var(--blue-teal) 80%, black));
+}
+
+.tone-tint-ice {
+  background: var(--blue-ice);
+}
+
+.tone-tint-periwinkle {
+  background: var(--blue-periwinkle);
+}
+
+.tone-divider-invert {
+  background: hsl(0 0% 100% / 0.25);
 }
 
 @keyframes fade-rise {

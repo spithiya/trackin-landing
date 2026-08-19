@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 /* ── Mini-mockup visual panels ── */
 
@@ -228,11 +229,32 @@ function ExportVisual() {
 
 /* ── Feature definitions ── */
 
+type Tone = 'plain' | 'tint-ice' | 'tint-periwinkle' | 'medium-teal' | 'bold-navy' | 'bold-azure';
+
+const toneClass: Record<Tone, string> = {
+  plain: '',
+  'tint-ice': 'tone-tint-ice',
+  'tint-periwinkle': 'tone-tint-periwinkle',
+  'medium-teal': 'tone-medium-teal',
+  'bold-navy': 'tone-bold-navy',
+  'bold-azure': 'tone-bold-azure',
+};
+
+const toneIsDark: Record<Tone, boolean> = {
+  plain: false,
+  'tint-ice': false,
+  'tint-periwinkle': false,
+  'medium-teal': true,
+  'bold-navy': true,
+  'bold-azure': true,
+};
+
 const features: {
   Icon: () => React.ReactElement;
   title: string;
   description: string;
   Visual: () => React.ReactElement;
+  tone: Tone;
 }[] = [
   {
     Icon: () => (
@@ -246,6 +268,7 @@ const features: {
     description:
       'Students type their first or last name into a search field. The kiosk filters every active student at that location and displays their current status. Tapping a name opens a confirmation card with the subject and session time limit. The screen resets 3 seconds after a successful check-in or check-out — no staff interaction required.',
     Visual: KioskVisual,
+    tone: 'plain',
   },
   {
     Icon: () => (
@@ -258,6 +281,7 @@ const features: {
     description:
       'A math-only or reading-only session caps at 30 minutes. A combined session caps at 60. The limit is locked in at check-in from the student\'s subject at that moment — editing their profile later doesn\'t change the running timer. Timers shift yellow at the halfway mark and red when time is up. Any session ending over the limit queues a parent SMS at checkout.',
     Visual: TimerVisual,
+    tone: 'tint-ice',
   },
   {
     Icon: () => (
@@ -269,6 +293,7 @@ const features: {
     description:
       'The dashboard shows every student in session and every staff member on the floor, updated in real time via Supabase Realtime subscriptions. Each card displays name, assigned tutor, subject, elapsed time, and a color-coded timer pill. There is no polling interval and no manual refresh — changes arrive the moment they happen at any location.',
     Visual: LiveVisual,
+    tone: 'bold-navy',
   },
   {
     Icon: () => (
@@ -281,6 +306,7 @@ const features: {
     description:
       'Every student has a profile with name, date of birth, assigned subjects, home location, and an optional notes field. Notes appear as amber warning banners on the check-in screen before the session begins. A recent-sessions panel shows the last five completed sessions with date, duration, subject, and any note left by the attending tutor.',
     Visual: RecordsVisual,
+    tone: 'plain',
   },
   {
     Icon: () => (
@@ -294,6 +320,7 @@ const features: {
     description:
       'Staff clock in by selecting their name in the portal. The system records the location, clock-in time, and shift duration for every session. Owners can force a clock-out for anyone who forgets. Every record is searchable by staff member, location, and date range. The full timesheet can be exported as CSV, Excel, or landscape PDF from the same filtered view.',
     Visual: TimesheetVisual,
+    tone: 'medium-teal',
   },
   {
     Icon: () => (
@@ -306,6 +333,7 @@ const features: {
     description:
       'Each student can have multiple contacts — mother, father, guardian, or other. One is marked primary. When a student is checked out after exceeding their time limit, TrackIn sends a pickup text to the primary contact via Twilio. The message, destination number, delivery status, and Twilio SID are all written to a log table for a permanent record.',
     Visual: SmsVisual,
+    tone: 'tint-periwinkle',
   },
   {
     Icon: () => (
@@ -318,6 +346,7 @@ const features: {
     description:
       'The analytics dashboard computes visit volume, average session duration, peak check-in hours by time of day, subject distribution, and the split between kiosk and staff check-ins. Data is aggregated for 7, 30, or 90-day windows. Every metric shows a percentage change against the prior equal period so trends are immediately visible.',
     Visual: AnalyticsVisual,
+    tone: 'bold-azure',
   },
   {
     Icon: () => (
@@ -330,6 +359,7 @@ const features: {
     description:
       'Visit history and staff timesheet records can be exported as CSV, Excel (.xlsx via SheetJS), or landscape PDF (via jsPDF with autotable). The export reflects whatever filters are currently applied — location, date range, and staff selection all carry through. Everything generates in the browser with no server round-trip.',
     Visual: ExportVisual,
+    tone: 'plain',
   },
 ];
 
@@ -377,49 +407,62 @@ export default function FeaturesSection() {
 
         {/* Feature list */}
         <div className="max-w-5xl mx-auto px-6 pt-24 pb-8">
-          {features.map((feature, i) => (
-            <div key={feature.title} className="feature-block relative py-16 md:py-24">
-              <span
-                className="absolute right-6 text-[clamp(100px,14vw,170px)] leading-none font-normal text-foreground select-none pointer-events-none"
-                style={{ fontFamily: 'var(--font-display)', opacity: 0.03 }}
-                aria-hidden="true"
-              >
-                {String(i + 1).padStart(2, '0')}
-              </span>
-
-              <div className="line-reveal h-px bg-border mb-10" />
-
+          {features.map((feature, i) => {
+            const dark = toneIsDark[feature.tone];
+            const colored = feature.tone !== 'plain';
+            return (
               <div
-                className="scroll-reveal flex items-center justify-between mb-8"
-                style={{ transitionDelay: '60ms' }}
+                key={feature.title}
+                className={cn(
+                  'feature-block relative py-16 md:py-24',
+                  colored && [toneClass[feature.tone], 'rounded-3xl px-6 md:px-12 my-6']
+                )}
               >
-                <span className="text-xs tracking-[0.22em] text-muted-foreground uppercase">
+                <span
+                  className={cn(
+                    'absolute right-6 text-[clamp(100px,14vw,170px)] leading-none font-normal select-none pointer-events-none',
+                    dark ? 'text-invert' : 'text-foreground'
+                  )}
+                  style={{ fontFamily: 'var(--font-display)', opacity: dark ? 0.06 : 0.03 }}
+                  aria-hidden="true"
+                >
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="text-muted-foreground"><feature.Icon /></div>
-              </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-start">
-                <div>
-                  <h3
-                    className="scroll-reveal text-4xl sm:text-5xl font-normal text-foreground leading-[1.0] mb-8"
-                    style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px', transitionDelay: '170ms' }}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p
-                    className="scroll-reveal text-lg sm:text-xl text-muted-foreground leading-relaxed"
-                    style={{ transitionDelay: '300ms' }}
-                  >
-                    {feature.description}
-                  </p>
+                <div className={cn('line-reveal h-px mb-10', dark ? 'tone-divider-invert' : 'bg-border')} />
+
+                <div
+                  className="scroll-reveal flex items-center justify-between mb-8"
+                  style={{ transitionDelay: '60ms' }}
+                >
+                  <span className={cn('text-xs tracking-[0.22em] uppercase', dark ? 'text-invert-muted' : 'text-muted-foreground')}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className={dark ? 'text-invert-muted' : 'text-muted-foreground'}><feature.Icon /></div>
                 </div>
-                <div className="scroll-reveal mt-2" style={{ transitionDelay: '220ms' }}>
-                  <feature.Visual />
+
+                <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-start">
+                  <div>
+                    <h3
+                      className={cn('scroll-reveal text-4xl sm:text-5xl font-normal leading-[1.0] mb-8', dark ? 'text-invert' : 'text-foreground')}
+                      style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px', transitionDelay: '170ms' }}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p
+                      className={cn('scroll-reveal text-lg sm:text-xl leading-relaxed', dark ? 'text-invert-muted' : 'text-muted-foreground')}
+                      style={{ transitionDelay: '300ms' }}
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div className="scroll-reveal mt-2" style={{ transitionDelay: '220ms' }}>
+                    <feature.Visual />
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Transition CTA */}

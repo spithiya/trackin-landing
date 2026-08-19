@@ -110,7 +110,7 @@ export default function Home() {
       <FeaturesSection />
 
       {/* ── About — Founder + Mission ───────────────────────── */}
-      <section id="about" className="relative bg-secondary py-32">
+      <section id="about" className="relative tone-tint-periwinkle py-32">
         <div className="relative z-10 max-w-5xl mx-auto px-8">
           {/* ── Founder ── */}
           <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">Our story</p>
@@ -123,24 +123,24 @@ export default function Home() {
           </h2>
 
           {/* Founder quote */}
-          <blockquote className="liquid-glass rounded-2xl p-10 mb-14 relative">
-            <svg viewBox="0 0 40 30" fill="currentColor" className="absolute top-8 left-8 w-8 h-6 text-muted-foreground opacity-20">
+          <blockquote className="tone-bold-navy rounded-2xl p-10 mb-14 relative">
+            <svg viewBox="0 0 40 30" fill="currentColor" className="absolute top-8 left-8 w-8 h-6 text-invert opacity-20">
               <path d="M0 30V18C0 8 6 2 18 0l2 4C12 6 9 10 9 14h7v16H0zm22 0V18c0-10 6-16 18-18l2 4c-8 2-11 6-11 10h7v16H22z" />
             </svg>
-            <p className="text-lg sm:text-xl text-foreground leading-relaxed pl-4">
+            <p className="text-lg sm:text-xl text-invert leading-relaxed pl-4">
               As a Kumon center owner, I loved watching my students succeed. But behind the scenes,
               the daily operations were a nightmare of paper logs, scattered spreadsheets, and endless
               sticky notes. I was tracking payroll, student analytics, parent reports, and staff
               timesheets across five different places.
             </p>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed pl-4 mt-5">
+            <p className="text-lg sm:text-xl text-invert-muted leading-relaxed pl-4 mt-5">
               Then, the inevitable happened. A single data entry mistake spiraled out of control.
               Hours were logged incorrectly, student tracking was lost, and trying to get someone
               else to help fix the messy spreadsheets only created more mistakes. I realized I was
               spending more time fighting manual admin work than actually running my business.
             </p>
             <p
-              className="text-xl sm:text-2xl text-foreground leading-relaxed pl-4 mt-5"
+              className="text-xl sm:text-2xl text-invert leading-relaxed pl-4 mt-5"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               That was my breaking point. I knew there had to be a better way — so I built TrackIn.
