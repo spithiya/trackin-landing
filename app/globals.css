@@ -13,15 +13,15 @@
 }
 
 :root {
-  /* Palette B — Indigo/Violet + Coral */
+  /* Palette A — Refined Blue + Amber */
   --background: hsl(0 0% 100%);
   --foreground: hsl(220 40% 8%);
   --muted-foreground: hsl(220 12% 46%);
-  --primary: hsl(245 65% 58%);
+  --primary: hsl(217 85% 45%);
   --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(214 32% 95%);
   --muted: hsl(214 32% 95%);
-  --accent: hsl(14 85% 60%);
+  --accent: hsl(38 85% 55%);
   --border: hsl(214 25% 88%);
   --input: hsl(214 25% 88%);
   --font-display: var(--font-instrument-serif, 'Instrument Serif', serif);
@@ -72,9 +72,22 @@ section[id] {
   pointer-events: none;
 }
 
-/* Alternating section background — subtle brand tint instead of orbs */
-.section-tint {
-  background: color-mix(in srgb, var(--primary) 8%, var(--background));
+/* Bold, fully-saturated section backgrounds — real color blocking
+   instead of subtle tints, for sections meant to stand out */
+.section-bold {
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 75%, black));
+}
+
+.section-cta {
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--accent) 65%, black));
+}
+
+.text-invert {
+  color: hsl(0 0% 100%);
+}
+
+.text-invert-muted {
+  color: hsl(0 0% 100% / 0.72);
 }
 
 @keyframes fade-rise {

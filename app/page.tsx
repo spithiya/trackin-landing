@@ -63,17 +63,17 @@ export default function Home() {
       </section>
 
       {/* ── The Chaos / Problem ─────────────────────────────── */}
-      <section className="relative bg-secondary py-32">
+      <section className="relative section-bold py-32">
         <div className="relative z-10 max-w-5xl mx-auto px-8">
-          <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">
+          <p className="text-xs text-invert-muted tracking-[0.2em] uppercase mb-7">
             The spreadsheet nightmare
           </p>
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl font-normal text-foreground leading-[1.0] max-w-3xl mb-20"
+            className="text-4xl sm:text-5xl md:text-6xl font-normal text-invert leading-[1.0] max-w-3xl mb-20"
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             One Data Entry Error Shouldn&apos;t Spiral Your Business{' '}
-            <em className="not-italic text-muted-foreground">Out of Control.</em>
+            <em className="not-italic text-invert-muted">Out of Control.</em>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -203,21 +203,21 @@ export default function Home() {
       </section>
 
       {/* ── Contact / CTA ───────────────────────────────────── */}
-      <section id="contact" className="min-h-screen relative section-tint flex flex-col">
+      <section id="contact" className="min-h-screen relative section-cta flex flex-col">
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-8 py-32 text-center max-w-2xl mx-auto w-full">
-          <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-7">
+          <p className="text-xs text-invert-muted tracking-[0.2em] uppercase mb-7">
             Private beta — limited spots
           </p>
           <h2
-            className="text-5xl sm:text-6xl font-normal text-foreground leading-[0.95] mb-6"
+            className="text-5xl sm:text-6xl font-normal text-invert leading-[0.95] mb-6"
             style={{ fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Lock in early access.{' '}
-            <em className="not-italic" style={{ color: 'var(--primary)' }}>
+            <em className="not-italic" style={{ color: 'hsl(45 95% 92%)' }}>
               Save big forever.
             </em>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-12 max-w-lg">
+          <p className="text-invert-muted text-lg leading-relaxed mb-12 max-w-lg">
             We are currently in private beta. Join the waitlist today to secure exclusive
             founding-member pricing — up to 50% off — when we launch. Spots are limited.
           </p>
@@ -239,13 +239,13 @@ export default function Home() {
             </button>
           </form>
 
-          <p className="text-xs text-muted-foreground leading-relaxed max-w-sm">
+          <p className="text-xs text-invert-muted leading-relaxed max-w-sm">
             🎁 Joining the waitlist is 100% free. No credit card required to lock in your lifetime discount.
           </p>
 
           {/* Direct contact */}
-          <div className="w-full mt-16 pt-10" style={{ borderTop: '1px solid hsl(214 25% 88%)' }}>
-            <p className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
+          <div className="w-full mt-16 pt-10" style={{ borderTop: '1px solid hsl(0 0% 100% / 0.25)' }}>
+            <p className="text-xs text-invert-muted tracking-[0.2em] uppercase mb-6">
               Or reach us directly
             </p>
             <div className="grid grid-cols-1 max-w-sm mx-auto gap-4 text-left">
