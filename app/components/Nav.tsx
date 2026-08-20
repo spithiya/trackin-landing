@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-type Section = 'home' | 'features' | 'about' | 'contact';
+type Section = 'home' | 'flow' | 'insights' | 'about' | 'contact';
 
 const links: { href: string; label: string; key: Section }[] = [
   { href: '#home',     label: 'Home',     key: 'home' },
-  { href: '#features', label: 'Features', key: 'features' },
+  { href: '#flow',     label: 'Flow',     key: 'flow' },
+  { href: '#insights', label: 'Insights', key: 'insights' },
   { href: '#about',    label: 'About',    key: 'about' },
-  { href: '#contact',  label: 'Contact',  key: 'contact' },
+  { href: '#contact',  label: 'Pricing',  key: 'contact' },
 ];
 
 export default function Nav() {
@@ -35,27 +36,30 @@ export default function Nav() {
     <nav
       className="sticky top-0 z-50"
       style={{
-        background: 'hsl(0 0% 100% / 0.88)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid hsl(214 25% 88% / 0.8)',
+        background: 'hsl(48 24% 96% / 0.86)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid var(--border)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-8 py-4 flex flex-row items-center justify-between">
-        <a
-          href="#home"
-          className="text-3xl tracking-tight text-foreground"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          TrackIn<sup className="text-xs">®</sup>
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex flex-row items-center justify-between">
+        <a href="#home" className="flex items-center gap-2.5">
+          <span
+            className="w-3 h-3 rotate-45 flex-shrink-0"
+            style={{ background: 'var(--primary)' }}
+            aria-hidden="true"
+          />
+          <span className="text-xl font-extrabold tracking-tight text-foreground">
+            TrackIn<sup className="text-[10px] align-super font-medium">®</sup>
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
+          {links.slice(1).map((link) => (
             <a
               key={link.key}
               href={link.href}
-              className={`text-sm transition-colors ${
+              className={`text-sm font-medium transition-colors ${
                 active === link.key
                   ? 'text-foreground'
                   : 'text-muted-foreground hover:text-foreground'
@@ -66,19 +70,33 @@ export default function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-5">
-          <Link
-            href="/login"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+        <div className="account-trigger relative">
+          <button
+            type="button"
+            className="flex items-center gap-1.5 text-sm font-medium text-foreground border rounded-full px-4 py-2 cursor-pointer"
+            style={{ borderColor: 'var(--border)' }}
           >
-            Log In
-          </Link>
-          <a
-            href="#contact"
-            className="liquid-glass rounded-full px-6 py-2.5 text-sm text-foreground hover:scale-[1.03] transition-transform"
-          >
-            Get Started
-          </a>
+            Account
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-3 h-3">
+              <path d="M2.5 4.5L6 8l3.5-3.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          <div className="account-menu absolute right-0 top-full mt-2 w-40 card overflow-hidden shadow-lg">
+            <Link
+              href="/login"
+              className="block px-4 py-3 text-sm text-foreground hover:bg-[var(--muted)] transition-colors border-b"
+              style={{ borderColor: 'var(--border)' }}
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/login"
+              className="block px-4 py-3 text-sm text-foreground hover:bg-[var(--muted)] transition-colors"
+            >
+              Sign up
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  weight: "400",
+const inter = Inter({
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const inter = Inter({
-  weight: ["400", "500"],
+const jetbrainsMono = JetBrains_Mono({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${inter.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body suppressHydrationWarning>{children}</body>
     </html>
