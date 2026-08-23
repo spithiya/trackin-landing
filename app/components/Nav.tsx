@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 type Section = 'home' | 'flow' | 'insights' | 'about' | 'contact';
 
@@ -83,19 +82,19 @@ export default function Nav() {
           </button>
 
           <div className="account-menu absolute right-0 top-full mt-2 w-40 card overflow-hidden shadow-lg">
-            <Link
-              href="/login"
+            <a
+              href="https://app.trackins.us/auth/login"
               className="block px-4 py-3 text-sm text-foreground hover:bg-[var(--muted)] transition-colors border-b"
               style={{ borderColor: 'var(--border)' }}
             >
               Sign in
-            </Link>
-            <Link
-              href="/login"
+            </a>
+            <a
+              href="https://app.trackins.us/auth/signup"
               className="block px-4 py-3 text-sm text-foreground hover:bg-[var(--muted)] transition-colors"
             >
               Sign up
-            </Link>
+            </a>
           </div>
         </div>
       </div>
